@@ -11,6 +11,7 @@ setup (
     author_email = "lousimons@gmail.com",
     description = "Utilities for creating LTSpice PWL files",
     long_description = read('README'),
+    url = "https://github.com/superlou/pwl-maker",
     license = "GPLv3",
     packages = ['pwl_maker', 'tests']
 )
