@@ -77,3 +77,27 @@ def test_as_lists():
   assert_equals(s.as_lists(),
     ([0, 1, 2, 5], [0, 0, 3, 3])
   )
+
+def test_scale_time():
+  s = Signal(slew=1)
+  s.at(1).to(3)
+
+  s.scale_time(1e-3);
+
+  assert_equals(s.data, [
+    [0, 0],
+    [1e-3, 0],
+    [2e-3, 3]
+  ])
+
+def test_scale_value():
+  s = Signal(slew=1)
+  s.at(1).to(3)
+
+  s.scale_value(3);
+
+  assert_equals(s.data, [
+    [0, 0],
+    [1, 0],
+    [2, 9]
+  ])

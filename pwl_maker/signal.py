@@ -57,3 +57,9 @@ class Signal(object):
 
   def as_lists(self):
     return tuple([list(t) for t in zip(*self.data)])
+
+  def scale_time(self, factor):
+    self.data = [[point[0]*factor, point[1]] for point in self.data]
+
+  def scale_value(self, factor):
+    self.data = [[point[0], point[1]*factor] for point in self.data]
