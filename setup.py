@@ -1,19 +1,16 @@
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+import os
+from setuptools import setup
 
-config = {
-    'description': 'PWL Maker',
-    'author': 'Louis Simons',
-    'url': 'URL to get it at.',
-    'download_url': 'Where to download it.',
-    'author_email': 'lousimons@gmail.com',
-    'version': '0.1',
-    'install_requires': ['nose'],
-    'packages': ['pwl_maker'],
-    'scripts': [],
-    'name': 'pwl_maker'
-}
+def read(fname):
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-setup(**config)
+setup (
+    name = "pwl_maker",
+    version = "0.1.0",
+    author = "Louis Simons",
+    author_email = "lousimons@gmail.com",
+    description = "Utilities for creating LTSpice PWL files",
+    long_description = read('README'),
+    license = "GPLv3",
+    packages = ['pwl_maker', 'tests']
+)
