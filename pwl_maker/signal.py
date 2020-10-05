@@ -24,7 +24,7 @@ class Signal(object):
       if point[0] == time:
         return point[1]
       elif point[0] > time:
-        print "here"
+        print ("here")
 
       previous_point = point
 
